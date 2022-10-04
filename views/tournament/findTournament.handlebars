@@ -13,7 +13,8 @@
         <a href="/tournament/editTournament/{{this.id}}"> <button class="btn btn-warning"> Edit</button> </a>
 
         {{!-- Delete --}}
-        <form action="/tournament/delete" method="POST">
+        <form action="/tournament/deleteTournament" method="POST">
+            <input type="hidden" name="id" value="{{this.id}}">
             <button type="submit" class="btn btn-warning">Delete</button>
         </form>
     </div>

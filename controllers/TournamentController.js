@@ -151,4 +151,18 @@ module.exports = class TournamentController {
                 console.log(err)
             })
     }
+
+    // Delete Tournament
+
+    static async deleteTournament(req, res) {
+        const id = req.body.id
+
+        try {
+            await Tournament.destroy({ where: { id: id } })
+
+            res.redirect('/tournament/findTournament')
+        } catch (err) {
+            console.log(err)
+        }
+    }
 }

@@ -8,5 +8,6 @@ router.post('/createTournamentSave', TournamentController.createTournamentSave)
 router.get('/findTournament', TournamentController.findTournament)
 router.get('/editTournament/:id', TournamentController.editTournament)
 router.post('/editTournament', TournamentController.editTournamentPost)
+router.post('/deleteTournament', TournamentController.deleteTournament)
 
 module.exports = router
