@@ -1,0 +1,21 @@
+<h3> Tournament List</h3>
+{{#each tournamentData}}
+<div class="allTournaments">
+    <h4>Tournament Name: <span>{{this.name}} </span> </h4>
+    <div class="actions">
+        {{!-- Check --}}
+        <form action="/tournament/check" method="POST">
+            <input type="hidden" name="tournamentId" value="{{this.id}}">
+            <button type="submit" class="btn btn-warning">Check</button>
+        </form>
+
+        {{!-- Edit --}}
+        <a href="/tournament/editTournament/{{this.id}}"> <button class="btn btn-warning"> Edit</button> </a>
+
+        {{!-- Delete --}}
+        <form action="/tournament/delete" method="POST">
+            <button type="submit" class="btn btn-warning">Delete</button>
+        </form>
+    </div>
+</div>
+{{/each}}

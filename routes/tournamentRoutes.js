@@ -1,8 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const TournamentController = require('../controllers/TournamentController')
+const Tournament = require('../models/Tournament')
 
 router.get('/createTournament', TournamentController.createTournament)
 router.post('/createTournamentSave', TournamentController.createTournamentSave)
+router.get('/findTournament', TournamentController.findTournament)
+router.get('/editTournament/:id', TournamentController.editTournament)
+router.post('/editTournament', TournamentController.editTournamentPost)
 
 module.exports = router
