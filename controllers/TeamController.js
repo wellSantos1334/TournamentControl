@@ -1,8 +1,10 @@
 const Team = require('../models/Team')
 
 module.exports = class TeamController {
-    static createTeam(req, res) {
-        res.render('team/createTeam')
+    static async createTeam(req, res) {
+        const Teams = await Team.findAll({order: [['id', 'DESC']], raw: true})
+        console.log(Teams)
+        res.render('team/createTeam', {Teams})
     }
 
     static async createTeamSave(req, res) {
@@ -18,6 +20,4 @@ module.exports = class TeamController {
         }
     }
 
-
-    
 }

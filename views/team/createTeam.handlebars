@@ -10,5 +10,28 @@
             <button type="submit" class="btn btn-warning btncss" id="btnCreateTeam">Create Team</button>
         </div>
     </div>
-
 </form>
+
+<hr>
+
+
+
+<div class="container">
+    <h2>Teams List</h2>
+    {{#each Teams}}
+    <ul>
+        <li>
+            <h4><span class="label">{{this.name}} </span></h4>
+            <span class="actions"><a href="/team/edit/{{this.id}}" class="btn">Edit</a>
+                <form action="/team/remove" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="submit" value="Delete" class="btn">
+                </form>
+            </span>
+        </li>
+    </ul>
+
+
+    {{/each}}
+
+</div>
