@@ -9,5 +9,6 @@ router.get('/findTournament', TournamentController.findTournament)
 router.get('/editTournament/:id', TournamentController.editTournament)
 router.post('/editTournament', TournamentController.editTournamentPost)
 router.post('/deleteTournament', TournamentController.deleteTournament)
+router.post('/checkTournament', TournamentController.checkTournament)
 
 module.exports = router

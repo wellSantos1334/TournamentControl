@@ -165,4 +165,10 @@ module.exports = class TournamentController {
             console.log(err)
         }
     }
+
+    static async checkTournament (req, res) {
+        const id = req.body.id
+
+        res.render('tournament/checkTournament', {id})
+    }
 }

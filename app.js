@@ -8,9 +8,11 @@ const app = express()
 
 // import models
 const Tournament = require('./models/Tournament')
+const Team = require('./models/Team')
 
 // import routes
 const tournamentRoutes = require('./routes/tournamentRoutes')
+const teamRoutes = require('./routes/teamRoutes')
 
 // template engine
 app.engine('handlebars', exphbs.engine())
@@ -26,6 +28,7 @@ app.get('/', (req, res) => {
     res.json('Página inicial')
 })
 app.use('/tournament', tournamentRoutes )
+app.use('/team', teamRoutes)
 
 // server
 conn.sequelize.sync().then(() => {

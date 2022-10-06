@@ -4,7 +4,7 @@
     <h4>Tournament Name: <span>{{this.name}} </span> </h4>
     <div class="actions">
         {{!-- Check --}}
-        <form action="/tournament/check" method="POST">
+        <form action="/tournament/checkTournament" method="POST">
             <input type="hidden" name="tournamentId" value="{{this.id}}">
             <button type="submit" class="btn btn-warning">Check</button>
         </form>
