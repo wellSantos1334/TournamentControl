@@ -14,23 +14,20 @@
 
 <hr>
 
-
-
 <div class="container">
     <h2>Teams List</h2>
     {{#each Teams}}
     <ul>
         <li>
             <h4><span class="label">{{this.name}} </span></h4>
-            <span class="actions"><a href="/team/edit/{{this.id}}" class="btn">Edit</a>
+            <span class="actions"><a href="/team/editTeam/{{this.id}}" class="btn">Edit</a>
                 <form action="/team/remove" method="POST">
-                <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="hidden" name="id" value="{{this.id}}">
                     <input type="submit" value="Delete" class="btn">
                 </form>
             </span>
         </li>
     </ul>
-
 
     {{/each}}
 
