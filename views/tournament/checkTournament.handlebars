@@ -1,3 +1,10 @@
-<h1>Check tournanent</h1>
+{{#if tournamentData}}
+<h1>{{tournamentData.name}}</h1>
 
-<p>teste: {{this.id}}</p>
+
+    <a href="/tournament/addTeamtoTournament/{{tournamentData.id}}"> <button>Add Team</button></a>
+    <a href="/tournament/checkTournamentGroup/{{tournamentData.id}}"> <button>Group</button></a>
+    <a href=""> <button>Playoffs</button></a>
+
+
+{{/if}}

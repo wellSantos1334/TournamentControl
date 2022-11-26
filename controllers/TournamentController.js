@@ -1,4 +1,5 @@
 const Tournament = require('../models/Tournament')
+const Team = require('../models/Team')
 module.exports = class TournamentController {
     // Create Tournament
     static createTournament(req, res) {
@@ -167,8 +168,32 @@ module.exports = class TournamentController {
     }
 
     static async checkTournament (req, res) {
-        const id = req.body.id
+        const id = req.body.tournamentId
+        const tournamentData = await Tournament.findOne({where: {id: id}, raw: true})
 
-        res.render('tournament/checkTournament', {id})
+        res.render('tournament/checkTournament', {tournamentData})
+    }
+
+    static async checkTournamentGroup (req, res) {
+        const tournamentId = req.params.id
+
+        
+    }
+
+    static async addTeamtoTournament(req, res) {
+        const tournamentId = req.params.id
+        const teamData = await Team.findAll({ order: [['createdAt', 'DESC']], raw: true })
+
+        
+
+        // const teste = {
+        //     tournamentId: tournamentId,
+        //     teamData: teamData
+        // }
+
+        // console.log(teste)
+
+        res.render('tournament/addTeamtoTournament', {tournamentId, teamData})
+
     }
 }

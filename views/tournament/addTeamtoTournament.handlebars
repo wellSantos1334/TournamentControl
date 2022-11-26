@@ -1,0 +1,28 @@
+<h3> Add Team</h3>
+{{#each teamData}}
+<div class="allTournaments">
+    <h4>Team Name: <span>{{this.name}} </span> </h4>
+    <div class="actions">
+        {{!-- addTeam --}}
+        <form action="/tournament/addTeam" method="POST">
+            {{#if tournamentId}}
+            
+            <input type="hidden" name="tournamentId" value="{{this.tournamentId}}">
+            {{/if}}
+            <input type="hidden" name="teamId" value="{{this.id}}">
+            <button type="submit" class="btn btn-warning">Insert</button>
+
+        </form>
+
+        {{!-- removeTeam --}}
+        <form action="/tournament/removeTeam" method="POST">
+            <input type="hidden" name="teamId" value="{{this.id}}">
+            <button type="submit" class="btn btn-warning">Remove</button>
+        </form>
+    </div>
+</div>
+{{/each}}
+
+            {{!-- {{#if tournamentId}}
+            <p>teste: {{this.tournamentId}}</p>
+            {{/if}} --}}

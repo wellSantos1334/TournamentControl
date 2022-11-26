@@ -9,6 +9,8 @@ const app = express()
 // import models
 const Tournament = require('./models/Tournament')
 const Team = require('./models/Team')
+const Team_Tournament = require('./models/team_tournament')
+
 
 // import routes
 const tournamentRoutes = require('./routes/tournamentRoutes')
@@ -32,6 +34,7 @@ app.use('/team', teamRoutes)
 
 // server
 conn.sequelize.sync().then(() => {
+        // conn.sequelize.sync({force: true}).then(() => {
     app.listen(PORT, () => {
         console.log(`Servidor rodando: http://localhost:${PORT}`)
     })
